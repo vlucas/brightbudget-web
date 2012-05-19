@@ -1,0 +1,6 @@
+{
+    "require": {
+        "vlucas/bullet": "*",
+        "rackem/rackem": "*"
+    }
+}

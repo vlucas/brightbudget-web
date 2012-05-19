@@ -1,0 +1,19 @@
+{
+    "hash": "f402e1ce3cd746d31133fc2e500f2796",
+    "packages": [
+        {
+            "package": "rackem/rackem",
+            "version": "dev-master",
+            "source-reference": "66f401d90b9bfe0e73c5879e2e30111ac5b7d89b"
+        },
+        {
+            "package": "vlucas/bullet",
+            "version": "dev-master",
+            "source-reference": "02caa6618c885aad24cd18a3d7a7924a221f4e8f"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ]
+}
