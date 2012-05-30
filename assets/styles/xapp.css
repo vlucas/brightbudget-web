@@ -1,0 +1,289 @@
+/**
+ * Global Stylesheet
+ */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #dcdcdc;
+  color: #555;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-family: "Mako", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 18px;
+}
+h4, h5, h6 {
+  font-size: 16px;
+}
+h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* misc */
+.inside {
+  padding: 12px 20px;
+}
+.vpad {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.padtop {
+  padding-top: 20px;
+}
+.outside {
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+}
+.clear {
+  clear: both;
+}
+
+#header {
+  padding-top: 20px;
+}
+  #header h1 {
+    font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 34px;
+  }
+  #header h1 a,
+  #header h1 a:hover,
+  #header h1 a:active,
+  #header h1 a:visited {
+    color: #555;
+    text-decoration: none;
+  }
+  #header h1 span {
+    color: #459257;
+  }
+#nav_header_user {
+  float: right;
+  margin: 20px;
+  padding: 5px 20px;
+  min-height: 30px;
+}
+
+#footer {
+  padding: 10px 40px;
+  text-align: right;
+}
+
+#sidebar {
+  padding-top: 20px;
+}
+  #nav_sidebar {
+    padding: 0;
+    margin: 0;
+  }
+  #nav_sidebar li.church_select {
+    list-style: none;
+  }
+    #nav_sidebar li.church_select form {
+      margin: 0;
+      padding: 10px 0;
+    }
+    #nav_sidebar li.church_select select {
+      width: 185px;
+    }
+  #nav_sidebar li.nav_item {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  #nav_sidebar li.church_select h2,
+  #nav_sidebar li.nav_item h2 {
+    position: relative;
+    display: block;
+    padding: 2px 20px 2px 20px;
+    margin: 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: #eee 0 1px 0;
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    background-color: #ededed;
+  }
+  #nav_sidebar li.nav_item a {
+    position: relative;
+    display: block;
+    padding: 12px 20px 12px 64px;
+    background-color: #fff;
+    color: #3B414F;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: #eee 0 1px 0;
+    border-left: 1px solid #999;
+    border-top: 1px solid #BBB6C7;
+  }
+  #nav_sidebar li.nav_item a:hover,
+  #nav_sidebar li.nav_item a:active,
+  #nav_sidebar li.nav_item a.active {
+    background-color: #E2F0E5;
+    /* thanks to the CSS3 gradient generator @link http://gradients.glrzad.com/ */
+    background-image: linear-gradient(bottom, #9FBFA1 0%, #CEE0D2 75%);
+    background-image: -o-linear-gradient(bottom, #9FBFA1 0%, #CEE0D2 75%);
+    background-image: -moz-linear-gradient(bottom, #9FBFA1 0%, #CEE0D2 75%);
+    background-image: -webkit-linear-gradient(bottom, #9FBFA1 0%, #CEE0D2 75%);
+    background-image: -ms-linear-gradient(bottom, #9FBFA1 0%, #CEE0D2 75%);
+  }
+  #nav_sidebar li.nav_item:first-child a,
+  #nav_sidebar li.nav_item.first a,
+  #nav_sidebar li.nav_item.first h2,
+  #nav_sidebar li.church_select.first h2 {
+    border-width: 1px 0px 0 1px;
+    border-style: solid;
+    border-color: #999;
+    border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+  }
+  #nav_sidebar li.nav_item:last-child a,
+  #nav_sidebar li.nav_item.last a {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #999;
+    border-right: 0;
+    border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+  }
+  /* nav icons */
+  #nav_sidebar li.nav_item a span {
+    position: absolute;
+    top: 7px;
+    left: 20px;
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  #nav_sidebar li.location a span { background-image: url('icons/07-map-marker.png'); }
+  #nav_sidebar li.dashboard a span { background-image: url('icons/12-eye.png'); }
+  #nav_sidebar li.sermons a span { background-image: url('icons/96-book.png'); }
+  #nav_sidebar li.audio a span { background-image: url('icons/66-microphone.png'); }
+  #nav_sidebar li.events a span { background-image: url('icons/83-calendar.png'); }
+  #nav_sidebar li.messages a span { background-image: url('icons/08-chat.png'); }
+  #nav_sidebar li.users a span { background-image: url('icons/112-group.png'); }
+  #nav_sidebar li.settings a span { background-image: url('icons/19-gear.png'); }
+  #nav_sidebar li.reports a span { background-image: url('icons/122-stats.png'); }
+
+/* timer */
+#timer { 
+  margin-top: 30px;
+}
+    
+/* content */
+#content {
+  position: relative;
+  z-index: 100;
+  min-height: 350px;
+}
+  .inside {
+    padding: 20px;
+  }
+  .hero-unit {
+    padding: 40px;
+  }
+  .hero-unit h1 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+  .hero-unit h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+/* Background/bounding box */
+.bBox {
+  background: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #999;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+  .bBox h1 {
+    margin: 0;
+    padding: 14px 20px 10px 20px;
+    font-size: 22px;
+    font-weight: normal;
+    font-family: "Mako", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #3B414F;
+    background-color: #E6E2D3;
+    background:-moz-linear-gradient(top,  #fff, #eee);
+    background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-right-radius: 10px;
+  }
+  h1 div.buttons {
+    margin: -5px 0;
+    padding: 0;
+    float: right;
+  }
+  h1 div.buttons a {
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+
+
+form {
+  margin-bottom: 0;
+}
+div.form-actions {
+  margin-bottom: 0;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+}
+
+/* Audio */
+.audio-notes {
+  padding: 10px;
+  margin: 10px 0;
+  max-height: 500px;
+  overflow: auto;
+  border: 1px solid #777;
+  background: #fdfdfd;
+}
+
+/* iPhone app frame */
+.appframe {
+  position: relative;
+  width: 283px;
+  height: 554px;
+  margin-bottom: 30px;
+}
+.appframe.iphone {
+  background: url('iphone4-frame-black-sm2.png') left top no-repeat;
+}
+.appframe.iphone img {
+  position: absolute;
+  top: 114px;
+  left: 23px;
+  width: 239px;
+  height: 342px;
+}
+

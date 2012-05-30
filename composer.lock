@@ -1,19 +1,34 @@
 {
-    "hash": "f402e1ce3cd746d31133fc2e500f2796",
+    "hash": "8fbd13c9b79c0ee6d9ce5af1d6b167ba",
     "packages": [
         {
-            "package": "rackem/rackem",
+            "package": "symfony/finder",
             "version": "dev-master",
-            "source-reference": "66f401d90b9bfe0e73c5879e2e30111ac5b7d89b"
+            "source-reference": "a2cef64d5072b284b671ee8e06b8ebc38c2969e1"
+        },
+        {
+            "package": "symfony/finder",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "vlucas/Spot",
+            "version": "dev-master",
+            "source-reference": "4668589011f8d73a1167433154d6f8e47f4f30c5"
         },
         {
             "package": "vlucas/bullet",
             "version": "dev-master",
-            "source-reference": "02caa6618c885aad24cd18a3d7a7924a221f4e8f"
+            "source-reference": "632c17c6a822791b8fce3c5a4b11972c3870da26"
         }
     ],
     "packages-dev": null,
     "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
 
     ]
 }

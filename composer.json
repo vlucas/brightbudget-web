@@ -1,6 +1,7 @@
 {
     "require": {
         "vlucas/bullet": "*",
-        "rackem/rackem": "*"
+        "vlucas/spot": "*",
+        "symfony/finder": "*"
     }
 }

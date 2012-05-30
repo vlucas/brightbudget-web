@@ -1,0 +1,11 @@
+{
+  "name"         : "brightbudget_api_test_suite",
+  "version"      : "0.0.1",
+  "dependencies" : {
+    "frisby"       : ">=0.x.x",
+    "jasmine-node" : ">=1.x.x",
+    "underscore"   : ">=1.x.x",
+    "dateformat"   : "1.x.x"
+  },
+  "scripts"      : { "test": "for D in ./?.*/; do echo -n \"Testing $D - \"; jasmine-node \"$D\"; done" }
+}
