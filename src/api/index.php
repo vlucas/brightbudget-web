@@ -4,7 +4,7 @@ $app->path('/', function($request) use($app) {
 
     return array(
       '_links' => array(
-        'budgets' => array('href' => '/budgets/')
+        'budgets' => array('href' => app()->url('/budgets/'))
       )
     );
   });

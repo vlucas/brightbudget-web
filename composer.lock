@@ -4,13 +4,19 @@
         {
             "package": "symfony/finder",
             "version": "dev-master",
-            "source-reference": "a2cef64d5072b284b671ee8e06b8ebc38c2969e1"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/finder",
             "version": "dev-master",
             "alias-pretty-version": "2.1.x-dev",
             "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/finder",
+            "version": "dev-master",
+            "source-reference": "9ee9a907afeef52956187e862714a7702ca26590"
         },
         {
             "package": "vlucas/Spot",
@@ -20,7 +26,7 @@
         {
             "package": "vlucas/bullet",
             "version": "dev-master",
-            "source-reference": "632c17c6a822791b8fce3c5a4b11972c3870da26"
+            "source-reference": "5a65a920c90aa4aaa3032e6f8e150e4947f60abe"
         }
     ],
     "packages-dev": null,

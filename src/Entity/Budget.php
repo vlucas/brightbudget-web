@@ -21,9 +21,9 @@ class Budget extends Spot\Entity
     public static function relations()
     {
         return array(
-            'expenses' => array(
+            'transactions' => array(
                 'type' => 'HasMany',
-                'entity' => 'Entity\Expense',
+                'entity' => 'Entity\Transaction',
                 'where' => array('budget_id' => ':entity.id')
             )
         );
@@ -31,14 +31,21 @@ class Budget extends Spot\Entity
 
     public function toArray()
     {
-        return array_merge(parent::dataExcept(array('expenses')), array(
+        return array_merge(parent::dataExcept(array('date_created', 'date_modified', 'transactions')), array(
             '_links' => array(
                 'self' => array(
-                    'href' => 'budgets/' . $this->id,
+                    'rel' => 'budget',
+                    'href' => app()->url('budgets/' . $this->id),
                     'method' => 'get'
                 ),
-                'expenses' => array(
-                    'href' => 'budgets/' . $this->id . '/expenses',
+                'delete' => array(
+                    //'title' => t('Delete'),
+                    'href' => app()->url('budgets/' . $this->id),
+                    'method' => 'delete'
+                ),
+                'transactions' => array(
+                    //'title' => t('Transactions'),
+                    'href' => app()->url('budgets/' . $this->id . '/transactions'),
                     'method' => 'get'
                 )
             )
