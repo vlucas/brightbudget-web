@@ -46,7 +46,12 @@ class Transaction extends Spot\Entity
                     'rel' => 'transaction',
                     'href' => app()->url('/budgets/' . $this->budget->id . '/transactions/' . $this->id),
                     'method' => 'get'
-                )
+                ),
+                'delete' => array(
+                    'title' => t('Delete'),
+                    'href' => app()->url('/budgets/' . $this->budget->id . '/transactions/' . $this->id),
+                    'method' => 'delete'
+                ),
             )
         ));
     }
