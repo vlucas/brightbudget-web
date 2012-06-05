@@ -48,7 +48,7 @@ if($migrate === true) {
   $finder = new Symfony\Component\Finder\Finder();
   $entities = $finder->files()->name('*.php')->in($srcDir . '/Entity');
   foreach($entities as $file) {
-    spot_mapper()->migrate('Entity\\' . $file->getBaseName('.php'));
+    $app->mapper()->migrate('Entity\\' . $file->getBaseName('.php'));
   }
 
   $response = new Bullet\Response();

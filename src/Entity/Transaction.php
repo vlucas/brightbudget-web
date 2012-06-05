@@ -10,7 +10,7 @@ class Transaction extends Spot\Entity
     {
         return array(
             'id' => array('type' => 'int', 'primary' => true, 'serial' => true),
-            'budget_id' => array('type' => 'int', 'index' => true),
+            'budget_id' => array('type' => 'int', 'index' => true, 'required' => true),
             'name' => array('type' => 'string', 'required' => true),
             'amount' => array('type' => 'float', 'required' => true, 'length' => '10,2'),
 
@@ -18,16 +18,33 @@ class Transaction extends Spot\Entity
         );
     }
 
+    public static function relations()
+    {
+        return array(
+            'budget' => array(
+                'type' => 'HasOne',
+                'entity' => 'Entity\Budget',
+                'where' => array('id' => ':entity.budget_id')
+            )
+        );
+    }
+
+    /**
+     * Return only field info that we want exposed in API 'parameters'
+     */
+    public static function parameters()
+    {
+        $fields = array('name', 'amount');
+        return array_intersect_key(self::fields(), array_flip($fields));
+    }
+
     public function toArray()
     {
-        return array_merge(parent::dataExcept(array('expenses')), array(
+        return array_merge(parent::dataExcept(array('budget')), array(
             '_links' => array(
                 'self' => array(
-                    'href' => app()->request()->url() . '/budgets/' . $this->id,
-                    'method' => 'get'
-                ),
-                'expenses' => array(
-                    'href' => '/budgets/' . $this->id . '/expenses',
+                    'rel' => 'transaction',
+                    'href' => app()->url('/budgets/' . $this->budget->id . '/transactions/' . $this->id),
                     'method' => 'get'
                 )
             )

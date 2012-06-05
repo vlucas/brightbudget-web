@@ -29,9 +29,28 @@ class Budget extends Spot\Entity
         );
     }
 
+    /**
+     * Return only field info that we want exposed in API 'parameters'
+     */
+    public static function parameters()
+    {
+        $fields = array('name', 'amount');
+        return array_intersect_key(self::fields(), array_flip($fields));
+    }
+
+    public function balance()
+    {
+        $spent = 0;
+        foreach($this->transactions as $txn) {
+            $spent += $txn->amount;
+        }
+        return (float) $this->amount - $spent;
+    }
+
     public function toArray()
     {
         return array_merge(parent::dataExcept(array('date_created', 'date_modified', 'transactions')), array(
+            'balance' => $this->balance(),
             '_links' => array(
                 'self' => array(
                     'rel' => 'budget',
@@ -39,12 +58,12 @@ class Budget extends Spot\Entity
                     'method' => 'get'
                 ),
                 'delete' => array(
-                    //'title' => t('Delete'),
+                    'title' => t('Delete'),
                     'href' => app()->url('budgets/' . $this->id),
                     'method' => 'delete'
                 ),
                 'transactions' => array(
-                    //'title' => t('Transactions'),
+                    'title' => t('Transactions'),
                     'href' => app()->url('budgets/' . $this->id . '/transactions'),
                     'method' => 'get'
                 )

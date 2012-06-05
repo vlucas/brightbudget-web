@@ -21,11 +21,32 @@ $app->addMethod('url', function($path) use($app) {
   // Assemble full URL
   $url = $request->scheme() . '://' . $request->host() . '/' . $subdir . '/';
 
-  // Reutrn URL + path
-  return $url . ltrim($path, '/');
+  // URL + path
+  $url = $url . ltrim($path, '/');
+
+  return $url . ($request->lang ? '?lang=' . $request->lang : '');
 });
 
-// Super-basic language translation
+// Super-simple language translation by key => value array
 function t($string) {
+  static $lang = null;
+  static $langs = array();
+  if($lang === null) {
+    $lang = app()->request()->get('lang', 'en');
+    if(!preg_match("/^[a-z]{2}$/", $lang)) {
+      throw new \Exception("Language must be a-z and only two characters");
+    }
+  }
+  if(!isset($langs[$lang])) {
+    $langFile = __DIR__ . '/lang/' . $lang . '.php';
+    if(!file_exists($langFile)) {
+      throw new \Exception("Language '$lang' not supported. Sorry :(");
+    }
+    $langs[$lang] = require($langFile);
+  }
+
+  if(isset($langs[$lang][$string])) {
+    return $langs[$lang][$string];
+  }
   return $string;
 }
