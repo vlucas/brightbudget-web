@@ -1,4 +1,6 @@
 <?php
+// Default timezone
+date_default_timezone_set('UTC');
 
 // Setup database connection
 $cfg = new \Spot\Config();

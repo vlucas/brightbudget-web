@@ -40,7 +40,7 @@ class Transaction extends Spot\Entity
 
     public function toArray()
     {
-        return array_merge(parent::dataExcept(array('budget')), array(
+        return array_merge(parent::dataExcept(array('date_created', 'date_modified', 'budget')), array(
             '_links' => array(
                 'self' => array(
                     'rel' => 'transaction',
