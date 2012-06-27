@@ -13,6 +13,12 @@ $app->addMethod('mapper', function() {
     return $mapper;
 });
 
+// Evil shortcut to access $app instance anywhere
+function app() {
+  global $app;
+  return $app;
+}
+
 // Add helper method to return base URL
 $app->addMethod('url', function($path) use($app) {
   $request = $app->request();

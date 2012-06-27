@@ -3,15 +3,8 @@
 $loader = require __DIR__ . '/vendor/autoload.php';
 $loader->add('Entity', __DIR__ . '/src/'); // Entities
 
-
 // Bullet App
 $app = new Bullet\App();
-
-// Evil shortcut to access $app instance anywhere
-function app() {
-  global $app;
-  return $app;
-}
 
 // Directories
 $srcDir = __DIR__ . '/src/';

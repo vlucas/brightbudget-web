@@ -66,6 +66,12 @@ class Budget extends Spot\Entity
                     'title' => t('Transactions'),
                     'href' => app()->url('budgets/' . $this->id . '/transactions'),
                     'method' => 'get'
+                ),
+                'add_transaction' => array(
+                  'title' => t('Add Transaction'),
+                  'href' => app()->url('budgets/' . $this->id . '/transactions'),
+                  'method' => 'post',
+                  'parameters' => Transaction::parameters()
                 )
             )
         ));

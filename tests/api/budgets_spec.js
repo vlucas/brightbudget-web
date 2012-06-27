@@ -8,12 +8,12 @@ var budget;
 // Start at base URL for API
 frisby.create('Explore from base URL')
   .get(base_url)
-  .expectStatus(200)
+  .expectStatus(201)
   .expectJSONTypes('_links', {
     budgets: Object,
   })
   .afterJSON(function(res) {
-    var base = res;
+    base = res;
 
     // CREATE item
     frisby.create('Create new budget')
