@@ -1,2 +1,4 @@
 composer.phar
 vendor
+tests/api/npm-debug.log
+tests/api/node_modules
