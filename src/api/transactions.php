@@ -13,14 +13,14 @@ $app->path('transactions', function($request) use($app, $budget) {
   // List
   $app->get(function($request) use($app, $mapper, $budget) {
     return array(
-      '_links' => array(
-        'add' => array(
-          'title' => t('Add Transaction'),
-          'href' => $app->url('budgets/' . $budget->id . '/transactions'),
-          'method' => 'post',
-          'parameters' => Transaction::parameters()
-        )
-      ),
+      //'_links' => array(
+        //'add' => array(
+          //'title' => t('Add Transaction'),
+          //'href' => $app->url('budgets/' . $budget->id . '/transactions'),
+          //'method' => 'post',
+          //'parameters' => Transaction::parameters()
+        //)
+      //),
       'items' => $budget->transactions->toArray()
      );
   });

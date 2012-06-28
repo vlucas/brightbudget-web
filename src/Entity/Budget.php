@@ -51,21 +51,21 @@ class Budget extends Spot\Entity
     {
         return array_merge(parent::dataExcept(array('date_created', 'date_modified', 'transactions')), array(
             'balance' => $this->balance(),
-            //'_links' => array(
-                //'self' => array(
-                    //'rel' => 'budget',
-                    //'href' => app()->url('budgets/' . $this->id),
-                    //'method' => 'get'
-                //),
+            '_links' => array(
+                'self' => array(
+                    'rel' => 'budget',
+                    'href' => app()->url('budgets/' . $this->id),
+                    'method' => 'get'
+                ),
+                'transactions' => array(
+                    'title' => t('Transactions'),
+                    'href' => app()->url('budgets/' . $this->id . '/transactions'),
+                    'method' => 'get'
+                ),
                 //'delete' => array(
                     //'title' => t('Delete'),
                     //'href' => app()->url('budgets/' . $this->id),
                     //'method' => 'delete'
-                //),
-                //'transactions' => array(
-                    //'title' => t('Transactions'),
-                    //'href' => app()->url('budgets/' . $this->id . '/transactions'),
-                    //'method' => 'get'
                 //),
                 //'add_transaction' => array(
                   //'title' => t('Add Transaction'),
@@ -73,7 +73,7 @@ class Budget extends Spot\Entity
                   //'method' => 'post',
                   //'parameters' => Transaction::parameters()
                 //)
-            //)
+            )
         ));
     }
 }
