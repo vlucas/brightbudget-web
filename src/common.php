@@ -27,10 +27,10 @@ $app->addMethod('url', function($path) use($app) {
   $subdir = trim(mb_substr($request->uri(), 0, mb_strrpos($request->uri(), $request->url())), '/');
 
   // Assemble full URL
-  $url = $request->scheme() . '://' . $request->host() . '/' . $subdir . '/';
+  $url = $request->scheme() . '://' . $request->host() . '/' . $subdir;
 
   // URL + path
-  $url = $url . ltrim($path, '/');
+  $url = rtrim($url, '/') . '/' . ltrim($path, '/');
 
   return $url . ($request->lang ? '?lang=' . $request->lang : '');
 });
