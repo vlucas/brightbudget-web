@@ -8,14 +8,14 @@ $app->path('budgets', function($request) use($app) {
   // List
   $app->get(function($request) use($app, $mapper) {
     return array(
-      //'_links' => array(
-        //'add' => array(
-          //'title' => t('Add Budget'),
-          //'href' => $app->url('budgets'),
-          //'method' => 'post',
-          //'parameters' => Entity\Budget::parameters()
-        //)
-      //),
+      '_links' => array(
+        'add' => array(
+          'title' => t('Add Budget'),
+          'href' => $app->url('budgets'),
+          'method' => 'post',
+          'parameters' => Entity\Budget::parameters()
+        )
+      ),
       'items' => $mapper->all('Entity\Budget')->toArray()
      );
   });
